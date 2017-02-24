@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/css/first.css">
+	</head>
+	<body>
+		<h1>Hangman</h1>
+		<div id="main">
+			<div id="output">
+				<div id="message"><%= @message %></div>
+				<img src=<%= @output %> style="width:100%;height:60%;">
+				<% if @win_lose %>
+					<%= @word %>
+				<% end %>
+				<% if @play == true %>
+					<div id="word_hidden"><%= @word_hidden %></div>
+					<form method="get" action="/hangman/start">
+		    			<button type="submit" id="reset">Reset Game</button>
+		   			</form>
+				<% end %>
+		    </div>
+		</div>
+		<div id="bottom_screen">
+			<% if @play == false %>
+			<form method="get" action="/hangman/start">
+				<button type="submit" class="buttonn" id="enter">PLAY!?!?</button>
+			</form>
+			<% end %>
+			<%if @play == true %>
+				<div id="form_submit" style="color:white;"> Guess a Letter
+					<form method="post" action="/hangman/play">
+						<input type='text' name="guess">&#160;&#160;&#160;
+						<button type="submit" id="submit">Submit</button>
+					</form>
+				</div>
+			    <div id="data" style="color:white;">LETTERS GUESSED:
+				    <div id="abc"> &#160;<div><span> <%= @abc %></span></div></div>
+				    <div class="button" id="guess"></div>
+			    </div>
+			<% end %>
+		</div>
+	</body>
+</html>

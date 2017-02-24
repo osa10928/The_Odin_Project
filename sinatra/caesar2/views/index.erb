@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<h1>Caesar Cipher</h1>
+	<body>
+		<p>
+			What secret message would you like to encode, and by how much would you like to increment the letters?
+		</p>
+		<form>
+			<input type='text' name='message' />
+			<input type='text' name='increment' />
+			<input type= 'submit' value='Submit!!' />
+		</form>
+		<% if code %>
+		<p>
+			Your ciphered text is:<br>
+			<%= code %>
+		</p>
+		<% end %>
+	</body>
+</html>
