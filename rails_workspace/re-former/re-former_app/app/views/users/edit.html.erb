@@ -1,0 +1,48 @@
+<body>
+	<p>
+		<%= form_for @user do |f| %> 
+		<ul>
+			<% @user.errors.full_messages.each do |error| %>
+			<li><%= error %></li>
+			<% end %>
+		</ul>
+		
+			<%= f.label :username, "User Name" %>
+			<%= f.text_field :username %><br>
+			<%= f.label :email, "Email" %>
+			<%= f.text_field :email, :value => "(enter email here)" %><br>
+			<%= f.label :password, "Password" %>
+			<%= f.password_field :password %><br>
+			<%= f.submit "Submit" %>
+		<% end %>
+	</p>
+
+
+	<!--
+	<p>
+		<%= form_tag("/users", method: "patch") do %>
+		  <%= label_tag(:username, "User Name") %>
+		  <%= text_field_tag(:username) %><br>
+		  <%= label_tag(:email, "Email") %>
+		  <%= text_field_tag(:email) %><br>
+		  <%= label_tag(:password, "Password") %>
+		  <%= password_field_tag(:password) %><br>
+		  <%= submit_tag("Submit") %>
+		<% end %>
+	</p>
+	-->
+
+	<!--
+	<p>Hello World</p>
+	<form action="/users" method="patch" accept-charset="UTF-8">
+		<input name="user[username]" type="text" />
+		<label>User Name</label><br>
+		<input name="user[email]" type="text" />
+		<label>Email</label><br>
+		<input name="user[password]" type="password" />
+		<label>Password</label><br>
+		<input name="submit" type="submit" value="submit">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	</form>
+-->
+</body>

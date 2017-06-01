@@ -1,5 +1,3 @@
-require 'json'
-require 'rubygems'
 class Hangman
 	attr_accessor :word, :word_hidden, :number_of_turns_left, :abc, :abc_hidden, :guess
 
